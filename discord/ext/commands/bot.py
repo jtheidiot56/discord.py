@@ -641,7 +641,7 @@ class BotBase(GroupMixin):
             raise errors.NoEntryPointError(key)
 
         try:
-            setup(self)
+            setup(self, data)
         except Exception as e:
             del sys.modules[key]
             self._remove_module_references(lib.__name__)
